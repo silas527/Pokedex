@@ -1,0 +1,12 @@
+-- Configuração do GIT
+git config --global user.name <seu nome de usuário>
+git config --global user.email <seu email do github>
+
+-- Criar o projeto
+dotnet new mvc -o Pokedex
+
+-- Abrir o programa XAMPP e clicar executar no MySQL
+-- Abrir o programa MySQL Workbench, abrir o script "Script Mysql.sql" e clicar no "raio"
+
+-- Executa o projeto
+dotnet watch run
