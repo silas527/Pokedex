@@ -3,7 +3,11 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
+builder.Services.AppDbContext<AppDbContext>();
+
 var app = builder.Build();
+var server = ServerVersion.AutoDetect(conexão);
+builder.Service.AddDbcontext<AppDbContext>();
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
