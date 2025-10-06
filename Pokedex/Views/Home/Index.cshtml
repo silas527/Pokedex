@@ -1,9 +1,9 @@
 ﻿@model list "Pokemon"
 @{
-    ViewData["Title"] = "Home Page";
-}
-
- <div class="pt-5 container">
+    ViewData[index: "Title"] = "Home Page";
+    string backgroundColor(string cor){
+        return cor.Replace("1)","0.75)");
+    }
             <div class="row">
                 <div class="col mx-auto text-center">
                     <h1 class="display-4 text-white">Pokédex</h1>
@@ -54,7 +54,7 @@
 
                 <!-- Card Pokemon - Inicio -->
                 <div class="col">
-                    <a href="#" class="text-decoration-none">
+                    <a asp-action="Details"asp-route-id="@pokemon.Numero" class="text-decoration-none">
                         <div class="card" style="background-color: rgba(119, 204, 85, 0.75)">
                             <img src="img/pokemons/001.png" class="card-img-top" alt="Bulbasaur" />
                             <div class="card-body">

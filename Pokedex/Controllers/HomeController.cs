@@ -27,6 +27,17 @@ public class HomeController : Controller
         return View();
     }
 
+    public IActionResult Details(int id)
+    {
+        var pokemon = _db.Pokemons
+            .Where(p => p.Numero == id)
+            .Include(p => p.Genero)
+            .Include(p => p.Regiao)
+            .Include(p => p.Tipos)
+            .ThenInclude(p => p.Tipos)
+            SingleOrDefault();
+        return View(pokemon)
+    }
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
     {
